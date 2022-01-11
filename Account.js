@@ -12,7 +12,9 @@ Account.prototype.deposit = function(amount) {
 }
 
 Account.prototype.withdraw = function(amount) {
+    if(this.balance - amount >= 0) {
     this.balance -= amount;
+    }
 }
 
 Account.prototype.print = function() {
@@ -30,4 +32,7 @@ account1.withdraw(50);
 account1.print();
 
 console.log("Total number of accounts: " + Account.count);
+
+
+console.log("Total number of accounts: " + account2.constructor.count);
 
