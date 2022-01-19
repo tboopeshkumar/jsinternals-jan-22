@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+        <script>
+            const longRun = ms => {
+                const start = new Date;
+                while (new Date - start < ms) {}
+            }
+
+            function frozen() {
+                console.log("frozen started");
+                longRun(10000);
+                console.log("frozen ended");
+            }
+
+            function notFrozen() {
+                console.log("notFrozen started");
+                setTimeoutl(longRun, 10000, 10000)
+                console.log("notFrozen ended");
+            }
+        </script>
+
+    </head>
+   
+    <body>
+        <input type="number"> <br />
+        <button onclick="frozen()">Frozen</button><br/>
+        <button onclick="notFrozen()">Not Frozen</button>
+
+    </body>
+</html>
